@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MLB 3D Pitch Visualizer</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #0d0d0d;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    #three-canvas {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      display: block;
+    }
+
+    #controls {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: rgba(0, 0, 0, 0.75);
+      border-radius: 16px;
+      padding: 20px;
+      width: 300px;
+      max-height: 90vh;
+      overflow-y: auto;
+      z-index: 10;
+      box-shadow: 0 0 12px rgba(255,255,255,0.15);
+    }
+
+    label {
+      font-weight: 600;
+      margin-top: 12px;
+      display: block;
+      font-size: 15px;
+    }
+
+    select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      margin-top: 4px;
+      font-size: 14px;
+      background: #222;
+      color: white;
+      border: 1px solid #555;
+    }
+
+    #pitchCheckboxes {
+      margin-top: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .pitch-type-group {
+      background: rgba(255,255,255,0.05);
+      border-radius: 8px;
+      padding: 10px;
+    }
+
+    .pitch-type-title {
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+
+    .checkbox-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+    }
+
+    .checkbox-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 13px;
+      gap: 4px;
+    }
+
+    .checkbox-group input[type="checkbox"] {
+      transform: scale(1.2);
+    }
+
+    @media (max-width: 600px) {
+      #controls {
+        width: calc(100vw - 40px);
+        left: 10px;
+        right: 10px;
+        padding: 14px;
+      }
+      select {
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="three-canvas"></canvas>
+  <div id="controls">
+    <label for="teamSelect">Select Team</label>
+    <select id="teamSelect"></select>
+
+    <label for="pitcherSelect">Select Pitcher</label>
+    <select id="pitcherSelect"></select>
+
+    <div id="pitchCheckboxes"></div>
+  </div>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
