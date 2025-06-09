@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>3D MLB Pitch Visualizer</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #111;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    #three-canvas {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      display: block;
+    }
+    #controls {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 16px;
+      border-radius: 12px;
+      z-index: 10;
+      max-width: 300px;
+      font-size: 14px;
+    }
+    label {
+      font-weight: bold;
+      margin-top: 6px;
+      display: block;
+    }
+    select {
+      width: 100%;
+      padding: 6px;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+    #pitchCheckboxes {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="three-canvas"></canvas>
+  <div id="controls">
+    <label for="teamSelect">Team</label>
+    <select id="teamSelect"></select>
+    <label for="pitcherSelect">Pitcher</label>
+    <select id="pitcherSelect"></select>
+    <div id="pitchCheckboxes"></div>
+  </div>
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
